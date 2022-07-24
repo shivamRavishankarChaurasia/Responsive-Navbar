@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam&family=Baloo+2:wght@500;600&family=Bree+Serif&family=Fira+Sans:wght@100;300&family=Gantari:wght@300&family=Hind+Siliguri&family=Merriweather:ital,wght@0,300;0,400;1,300&family=Open+Sans&family=Outfit:wght@600&family=Poppins:wght@300&family=Roboto+Slab:wght@300;500;600&family=Roboto:wght@100;300&family=Ubuntu&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: #ffff;
+    font-family: 'Roboto',
+        sans-serif;
+}
+
+body {
+    background-image: url(./bg.jpg);
+    background-position: center;
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 550;
+
+
+}
+
+ul {
+    list-style: none;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 14vh;
+    align-items: center;
+    padding: 55px;
+    position: sticky;
+
+}
+
+header .logo {
+    font-weight: 600;
+    /* font-size: 20px; */
+    font-size: 1.7rem;
+    font-stretch: ultra-expanded;
+}
+
+ul,
+li {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    gap: 18px;
+    /* margin-right: 1.5rem; */
+}
+
+ul li a {
+    padding: 8px 10px;
+}
+
+ul li a.active,
+ul li a:hover {
+    background-color: grey;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.hamburger {
+    position: absolute;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    display: none;
+}
+
+.hamburger .bar {
+    height: 4px;
+    width: 100%;
+    background-color: #ffff;
+    border-radius: 15px;
+    transition: 0.5s all;
+}
+
+@media (max-width:768px) {
+    body {
+        overflow-x: hidden;
+        background-size: cover;
+    }
+
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+    }
+
+    ul {
+
+        flex-direction: column;
+        position: absolute;
+        top: 14vh;
+        right: -100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        /* we have 14vh to header so 100-14 = 86 to the remaining height to sidebar */
+        height: 86vh;
+        width: 100%;
+        align-items: center;
+        transition: right 0.3s ease-in;
+
+    }
+
+    ul li {
+        margin-right: 0px;
+
+    }
+
+    .menu-slide {
+        right: 0;
+        transition: right 0.3s ease-in;
+    }
+
+    .cross .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .cross .bar:first-child {
+        transform: rotate(-45deg) translate(-5px, 7px);
+    }
+
+    .cross .bar:last-child {
+        transform: rotate(45deg) translate(-5px, -7px);
+    }
+
+}
